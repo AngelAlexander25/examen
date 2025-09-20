@@ -383,79 +383,48 @@ def create_lead_time_chart(df):
 def show_model_info_card():
     """Muestra tarjeta informativa sobre el modelo"""
     with st.expander("🤖 ¿Cómo funciona nuestro modelo de predicción?", expanded=False):
-        st.markdown("""
-        <div class="info-card">
-            <h3>Modelo de Machine Learning XGBoost</h3>
-            <p><strong>Algoritmo:</strong> Utilizamos XGBoost (Extreme Gradient Boosting), uno de los algoritmos más potentes para problemas de clasificación.</p>
-            
-            <h3>Variables Principales</h3>
-            <ul>
-                <li><strong>Tiempo de Anticipación:</strong> Días entre la reserva y la llegada</li>
-                <li><strong>Tipo de Depósito:</strong> Si el huésped pagó depósito o no</li>
-                <li><strong>Historial del Cliente:</strong> Cancelaciones y reservas anteriores</li>
-                <li><strong>Características de la Reserva:</strong> Duración, huéspedes, habitación</li>
-                <li><strong>Canal de Distribución:</strong> Cómo llegó el cliente</li>
-            </ul>
-            
-            <h3>Precisión del Modelo</h3>
-            <p>Nuestro modelo alcanza una precisión del <strong>87%</strong> en la predicción de cancelaciones, permitiendo tomar decisiones proactivas para mejorar la rentabilidad del hotel.</p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("**Modelo de Machine Learning XGBoost**")
+        st.write("**Algoritmo:** Utilizamos XGBoost (Extreme Gradient Boosting), uno de los algoritmos más potentes para problemas de clasificación.")
+        
+        st.markdown("**Variables Principales**")
+        st.write("• **Tiempo de Anticipación:** Días entre la reserva y la llegada")
+        st.write("• **Tipo de Depósito:** Si el huésped pagó depósito o no")
+        st.write("• **Historial del Cliente:** Cancelaciones y reservas anteriores")
+        st.write("• **Características de la Reserva:** Duración, huéspedes, habitación")
+        st.write("• **Canal de Distribución:** Cómo llegó el cliente")
+        
+        st.markdown("**Precisión del Modelo**")
+        st.write("Nuestro modelo alcanza una precisión del **87%** en la predicción de cancelaciones, permitiendo tomar decisiones proactivas para mejorar la rentabilidad del hotel.")
 
 def show_kpi_info_card():
     """Muestra tarjeta informativa sobre los KPIs"""
     with st.expander("📊 Entendiendo los KPIs del Dashboard", expanded=False):
-        st.markdown("""
-        <div class="info-card">
-            <h3>Indicadores Clave de Rendimiento (KPIs)</h3>
-            
-            <p><strong>Total de Reservas:</strong> Número total de reservas registradas en el sistema.</p>
-            
-            <p><strong>Cancelaciones:</strong> Cantidad de reservas que fueron canceladas por los huéspedes.</p>
-            
-            <p><strong>Tasa de Cancelación:</strong> Porcentaje de reservas canceladas sobre el total. Una tasa normal oscila entre 25-40%.</p>
-            
-            <h3>¿Por qué son importantes?</h3>
-            <ul>
-                <li><strong>Planificación de Ingresos:</strong> Permite ajustar estrategias de pricing y overbooking</li>
-                <li><strong>Gestión de Recursos:</strong> Optimiza personal y servicios según demanda real</li>
-                <li><strong>Estrategias de Retención:</strong> Identifica patrones para reducir cancelaciones</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("**Indicadores Clave de Rendimiento (KPIs)**")
+        
+        st.write("**Total de Reservas:** Número total de reservas registradas en el sistema.")
+        st.write("**Cancelaciones:** Cantidad de reservas que fueron canceladas por los huéspedes.")
+        st.write("**Tasa de Cancelación:** Porcentaje de reservas canceladas sobre el total. Una tasa normal oscila entre 25-40%.")
+        
+        st.markdown("**¿Por qué son importantes?**")
+        st.write("• **Planificación de Ingresos:** Permite ajustar estrategias de pricing y overbooking")
+        st.write("• **Gestión de Recursos:** Optimiza personal y servicios según demanda real")
+        st.write("• **Estrategias de Retención:** Identifica patrones para reducir cancelaciones")
 
 def show_interpretation_guide():
     """Muestra guía de interpretación de resultados"""
     with st.expander("🎯 Guía de Interpretación de Resultados", expanded=False):
-        st.markdown("""
-        <div class="info-card">
-            <h3>Niveles de Riesgo de Cancelación</h3>
-            
-            <div class="risk-low">
-                <strong>🟢 RIESGO BAJO (0-25%):</strong> Reserva muy estable. Continúa con el proceso normal.
-            </div>
-            
-            <div class="risk-medium">
-                <strong>🟡 RIESGO MODERADO (26-50%):</strong> Monitorear la reserva. Considerar email de confirmación.
-            </div>
-            
-            <div class="risk-medium">
-                <strong>🟠 RIESGO ALTO (51-75%):</strong> Implementar estrategias de retención inmediatas.
-            </div>
-            
-            <div class="risk-high">
-                <strong>🔴 RIESGO MUY ALTO (+75%):</strong> Contacto urgente con el huésped. Ofrecer incentivos.
-            </div>
-            
-            <h3>Acciones Recomendadas</h3>
-            <ul>
-                <li><strong>Contacto Proactivo:</strong> Llamada o email personalizado</li>
-                <li><strong>Incentivos:</strong> Descuentos, upgrades de habitación, servicios adicionales</li>
-                <li><strong>Flexibilidad:</strong> Opciones de cambio de fecha sin penalización</li>
-                <li><strong>Confirmación:</strong> Solicitar confirmación de asistencia</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("**Niveles de Riesgo de Cancelación**")
+        
+        st.success("**🟢 RIESGO BAJO (0-25%):** Reserva muy estable. Continúa con el proceso normal.")
+        st.warning("**🟡 RIESGO MODERADO (26-50%):** Monitorear la reserva. Considerar email de confirmación.")
+        st.warning("**🟠 RIESGO ALTO (51-75%):** Implementar estrategias de retención inmediatas.")  
+        st.error("**🔴 RIESGO MUY ALTO (+75%):** Contacto urgente con el huésped. Ofrecer incentivos.")
+        
+        st.markdown("**Acciones Recomendadas**")
+        st.write("• **Contacto Proactivo:** Llamada o email personalizado")
+        st.write("• **Incentivos:** Descuentos, upgrades de habitación, servicios adicionales")
+        st.write("• **Flexibilidad:** Opciones de cambio de fecha sin penalización")
+        st.write("• **Confirmación:** Solicitar confirmación de asistencia")
 
 # --- Header principal ---
 st.markdown("""
@@ -837,7 +806,7 @@ with tab2:
         
         # Botones de acción
         st.divider()
-        col_btn1, col_btn2, col_btn3 = st.columns(3)
+        col_btn1, col_btn2 = st.columns(2)
         
         with col_btn1:
             if st.button("🔄 Nueva Predicción", use_container_width=True):
@@ -846,12 +815,7 @@ with tab2:
                 st.rerun()
         
         with col_btn2:
-            if st.button("📧 Generar Email", use_container_width=True):
-                st.info("Funcionalidad de generación de emails próximamente")
-        
-        with col_btn3:
-            if st.button("📊 Exportar Reporte", use_container_width=True):
-                st.info("Funcionalidad de exportación próximamente")
+            st.info("💡 **Tip:** Usa estos resultados para contactar proactivamente al huésped")
 
 # Footer elegante
 st.divider()
